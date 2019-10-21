@@ -3,7 +3,9 @@ package com.grovertb;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
+
+import tcking.github.com.giraffeplayer2.GiraffePlayer;
+import tcking.github.com.giraffeplayer2.VideoInfo;
 
 public class GiraffePlayer2Module extends ReactContextBaseJavaModule {
 
@@ -20,8 +22,7 @@ public class GiraffePlayer2Module extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void play(String url) {
+        GiraffePlayer.play(reactContext, new VideoInfo(url));
     }
 }
