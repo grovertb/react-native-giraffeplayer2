@@ -70,6 +70,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'  // From node_modules
 
     api 'com.github.tcking:giraffeplayer2:0.1.25-lazyLoad'
+    api "com.github.tcking:ijkplayer-armv7a:0.8.8-full"
 }
 
 def configureReactNativePom(def pom) {
