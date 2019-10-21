@@ -42,4 +42,6 @@ buck-out/
 *.keystore
 
 android/.project
+android/.settings
+android/.classpath
 android/gradle*

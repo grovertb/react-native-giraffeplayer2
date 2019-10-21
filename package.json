@@ -1,7 +1,7 @@
 {
-  "name": "react-native-giraffe-player2",
-  "title": "React Native Giraffe Player2",
-  "version": "1.0.0",
+  "name": "react-native-giraffeplayer2",
+  "title": "React Native GiraffePlayer2",
+  "version": "0.0.1",
   "description": "TODO",
   "main": "index.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-giraffe-player2.git",
-    "baseUrl": "https://github.com/github_account/react-native-giraffe-player2"
+    "url": "git+https://github.com/github_account/react-native-giraffeplayer2.git",
+    "baseUrl": "https://github.com/github_account/react-native-giraffeplayer2"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Grover TB",
+    "email": "grover.jtb@gmail.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
