@@ -1,42 +1,75 @@
 # react-native-giraffeplayer2
 
+> Video Player based on [GiraffePlayer2](https://github.com/tcking/GiraffePlayer2) for react-native
+
+*Only Android support now.*
+
 ## Getting started
 
 `$ npm install react-native-giraffeplayer2 --save`
 
-### Mostly automatic installation
 
-`$ react-native link react-native-giraffeplayer2`
+### Screen
 
-### Manual installation
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-giraffeplayer2` and add `GiraffePlayer2.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libGiraffePlayer2.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.grovertb.GiraffePlayer2Package;` to the imports at the top of the file
-  - Add `new GiraffePlayer2Package()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-giraffeplayer2'
-  	project(':react-native-giraffeplayer2').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-giraffeplayer2/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-giraffeplayer2')
-  	```
-
+![](https://raw.githubusercontent.com/grovertb/react-native-giraffeplayer2/master/screens/demo.gif)
 
 ## Usage
 ```javascript
+import React from 'react';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+
 import GiraffePlayer2 from 'react-native-giraffeplayer2';
 
-// TODO: What to do with the module?
-GiraffePlayer2;
+export default function App() {
+  React.useEffect(() => {
+    GiraffePlayer2.setShowTopBar(true);
+    GiraffePlayer2.setFullScreenOnly(true);
+  }, []);
+
+  const _handleClickPlay = () => {
+    GiraffePlayer2.setTitle('Demo');
+    GiraffePlayer2.play('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4');
+  };
+
+  return (
+    <View style={styles.body}>
+      <Text style={styles.title}>GiraffePlayer2</Text>
+      <TouchableOpacity style={styles.button} onPress={_handleClickPlay}>
+        <Text>Play</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#c4c4c4',
+    borderRadius: 4,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+  },
+  body: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  title: {
+    fontSize: 20,
+    marginBottom: 12,
+  },
+});
 ```
+
+## API
+
+### Config
+* `setTitle(title)` - set title => title: String
+* `setFullScreenOnly(val)` - set fullscreen => val: Boolean
+* `setAspectRatio(val)` - set aspect ratio => AspectRatio: String
+* `setShowTopBar(SCALE_TYPE)` - set show top bar type => val: Boolean
+
+### Initialize
+* `play(url)` - play video => url: String
+
+#### LICENSE
+MIT
