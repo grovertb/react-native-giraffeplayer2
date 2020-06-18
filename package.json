@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-giraffeplayer2.git",
-    "baseUrl": "https://github.com/github_account/react-native-giraffeplayer2"
+    "url": "git+https://github.com/grovertb/react-native-giraffeplayer2.git",
+    "baseUrl": "https://github.com/grovertb/react-native-giraffeplayer2"
   },
   "keywords": [
     "react-native"
